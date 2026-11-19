@@ -80,12 +80,12 @@ export function ContactForm() {
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
       <div className="form-row">
-        <label>Full name<input name="name" required minLength={2} maxLength={100} autoComplete="name" placeholder="Your name" /></label>
-        <label>Business email<input name="email" type="email" required maxLength={254} autoComplete="email" placeholder="you@company.com" /></label>
+        <label className="field"><span className="field-label">Full name</span><input name="name" required minLength={2} maxLength={100} autoComplete="name" placeholder="Your name" /></label>
+        <label className="field"><span className="field-label">Business email</span><input name="email" type="email" required maxLength={254} autoComplete="email" placeholder="you@company.com" /></label>
       </div>
       <div className="form-row">
-        <label>Company name <span>(optional)</span><input name="company" maxLength={150} autoComplete="organization" placeholder="Your company" /></label>
-        <label>Project type
+        <label className="field"><span className="field-label">Company name <i>(optional)</i></span><input name="company" maxLength={150} autoComplete="organization" placeholder="Your company" /></label>
+        <label className="field"><span className="field-label">Project type</span>
           <select name="projectType" required defaultValue="">
             <option value="" disabled>Select a service</option>
             <option>Custom software</option>
@@ -99,16 +99,17 @@ export function ContactForm() {
         </label>
       </div>
       <div className="form-row">
-        <label>Estimated budget
+        <label className="field"><span className="field-label">Estimated budget</span>
           <select name="budget" defaultValue="">
             <option value="">Prefer not to say</option>
-            <option>Under 1 lakh INR</option>
-            <option>1 to 5 lakh INR</option>
-            <option>5 to 20 lakh INR</option>
-            <option>Above 20 lakh INR</option>
+            <option>5k to 20k INR</option>
+            <option>20k to 40k INR</option>
+            <option>40k to 60k INR</option>
+            <option>60k to 80k INR</option>
+            <option>80k to 1 lakh INR</option>
           </select>
         </label>
-        <label>Project timeline
+        <label className="field"><span className="field-label">Project timeline</span>
           <select name="timeline" defaultValue="">
             <option value="">Not sure yet</option>
             <option>Under 1 month</option>
@@ -118,7 +119,7 @@ export function ContactForm() {
           </select>
         </label>
       </div>
-      <label>Tell us about your project<textarea name="message" required minLength={20} maxLength={5000} rows={5} placeholder="What are you looking to build? What challenge are you trying to solve?" /></label>
+      <label className="field"><span className="field-label">Tell us about your project</span><textarea name="message" required minLength={20} maxLength={5000} rows={5} placeholder="What are you looking to build? What challenge are you trying to solve?" /></label>
 
       <label className="honeypot" aria-hidden="true">Leave this field empty<input name="website" tabIndex={-1} autoComplete="off" /></label>
 
