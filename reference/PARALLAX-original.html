@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PARALLAX | Software Engineering &amp; Digital Solutions</title>
+<meta name="description" content="PARALLAX engineers custom software, web and mobile applications, AI automation and SaaS products for businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--twilight:#272036;--mauve:#54415E;--plum:#8C6680;--rose:#C39AA1;--ivory:#F0E4DD;--line:rgba(195,154,161,.28);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:5rem;scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--twilight);color:var(--ivory);font:400 1rem/1.65 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem)}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+.mono{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--rose)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(39,32,54,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:4rem}
+.logo{font-weight:800;font-size:1.15rem;letter-spacing:.04em;text-decoration:none}
+.links{display:flex;gap:1.75rem;align-items:center}
+.links a{text-decoration:none;font-size:.95rem;opacity:.85}
+.links a:hover{opacity:1}
+.btn{display:inline-block;background:var(--plum);color:var(--ivory);padding:.8rem 1.4rem;border:1px solid var(--plum);border-radius:2px;font:700 .95rem Manrope,sans-serif;text-decoration:none;cursor:pointer;transition:background .2s}
+.btn:hover{background:#7a5570}
+.btn.ghost{background:transparent;border-color:var(--rose)}
+.btn.ghost:hover{background:rgba(195,154,161,.12)}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--ivory);padding:.45rem .8rem;font:inherit;border-radius:2px}
+@media(max-width:820px){.menu{display:block}.links{display:none;position:absolute;top:4rem;left:0;right:0;flex-direction:column;align-items:flex-start;gap:1rem;padding:1.25rem;background:var(--twilight);border-bottom:1px solid var(--line)}.links.open{display:flex}}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;padding:clamp(3rem,8vw,6.5rem) 0}
+h1{font-size:clamp(2.4rem,5.6vw,4.6rem);line-height:1.04;font-weight:800;letter-spacing:-.025em;margin:0 0 1.5rem}
+h1 span{display:block}
+h1 span:nth-child(2){padding-left:clamp(1rem,4vw,3rem);color:var(--rose)}
+h1 span:nth-child(3){padding-left:clamp(2rem,8vw,6rem)}
+.lead{max-width:34rem;font-size:1.1rem;opacity:.88;margin:0 0 2rem}
+.cta{display:flex;gap:.9rem;flex-wrap:wrap}
+.scene{aspect-ratio:1;width:100%;max-width:460px;justify-self:center}
+.scene svg{width:100%;height:100%;display:block;overflow:visible}
+.scene .l{transition:transform .25s ease-out}
+@media(max-width:820px){.hero{grid-template-columns:1fr}.scene{max-width:300px;justify-self:start}}
+section{padding:clamp(3.5rem,8vw,6rem) 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.8rem,3.6vw,2.7rem);line-height:1.12;letter-spacing:-.02em;margin:0 0 1rem;max-width:40rem}
+.intro{max-width:38rem;opacity:.85;margin:0 0 2.5rem}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+@media(max-width:820px){.split{grid-template-columns:1fr}}
+.principles{list-style:none;margin:0;padding:0}
+.principles li{padding:1rem 0;border-bottom:1px solid var(--line)}
+.principles b{display:block;margin-bottom:.15rem}
+.principles span{opacity:.8;font-size:.95rem}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.svc article{background:var(--twilight);padding:1.6rem}
+.svc article:nth-child(odd){background:#2d2540}
+.svc h3{margin:0 0 .5rem;font-size:1.1rem}
+.svc p{margin:0 0 .8rem;font-size:.93rem;opacity:.85}
+.svc .out{color:var(--rose);font-size:.88rem}
+.svc a{font-size:.9rem;text-decoration-color:var(--plum);text-underline-offset:4px}
+.light{background:var(--ivory);color:var(--twilight);border-top:0}
+.light .mono{color:var(--plum)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1.5rem;counter-reset:s}
+.steps li{counter-increment:s;border-top:2px solid var(--twilight);padding-top:.9rem}
+.steps li::before{content:counter(s,decimal-leading-zero);font:400 .8rem "IBM Plex Mono",monospace;color:var(--plum);display:block;margin-bottom:.3rem}
+.steps b{display:block;font-size:1.05rem}
+.steps span{font-size:.92rem;opacity:.85}
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+.work article{background:var(--mauve);padding:1.5rem;border:1px solid var(--line)}
+.work h3{margin:.4rem 0 .5rem}
+.work p{margin:0;font-size:.93rem;opacity:.88}
+form{display:grid;gap:1rem;max-width:620px}
+label{display:grid;gap:.35rem;font-size:.9rem}
+input,select,textarea{background:var(--mauve);color:var(--ivory);border:1px solid var(--line);border-radius:2px;padding:.75rem;font:inherit}
+textarea{min-height:120px;resize:vertical}
+.err{color:#f2b8b5;font-size:.85rem;min-height:1em}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+.check{display:flex;gap:.6rem;align-items:flex-start}
+.check input{margin-top:.3rem}
+#status{padding:.8rem 1rem;border:1px solid var(--line);display:none}
+#status.show{display:block}
+footer{border-top:1px solid var(--line);padding:2.5rem 0;font-size:.9rem;opacity:.85}
+.fgrid{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.fgrid p{max-width:24rem;margin:.4rem 0 0}
+.fgrid nav{height:auto;gap:1.2rem;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.scene .l{transition:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav aria-label="Main">
+<a class="logo" href="#top">PARALLAX</a>
+<button class="menu" aria-expanded="false" aria-controls="links">Menu</button>
+<div class="links" id="links">
+<a href="#top">Home</a><a href="#services">Services</a><a href="#solutions">Solutions</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
+<a class="btn" href="#contact">Start a Project</a></div></nav></div></header>
+
+<main id="top">
+<div class="wrap hero">
+<div>
+<h1><span>Complex Problems.</span><span>Different Perspectives.</span><span>Exceptional Software.</span></h1>
+<p class="lead">We engineer digital solutions that help businesses operate smarter, scale faster and create meaningful impact.</p>
+<div class="cta"><a class="btn" href="#contact">Start a Project</a><a class="btn ghost" href="#work">Explore Our Work</a></div>
+</div>
+<div class="scene" id="scene" role="img" aria-label="Three offset geometric layers that shift as the pointer moves, illustrating parallax">
+<svg viewBox="0 0 400 400">
+<g class="l" data-d="6"><rect x="70" y="70" width="260" height="260" fill="#54415E"/></g>
+<g class="l" data-d="16"><polygon points="70,330 200,120 330,330" fill="none" stroke="#C39AA1" stroke-width="1.5"/></g>
+<g class="l" data-d="28"><rect x="130" y="150" width="140" height="140" fill="#8C6680" opacity=".92"/></g>
+<g class="l" data-d="42"><line x1="70" y1="200" x2="330" y2="200" stroke="#F0E4DD" stroke-width="1"/><circle cx="200" cy="200" r="7" fill="#F0E4DD"/></g>
+</svg></div>
+</div>
+
+<section id="capabilities"><div class="wrap split">
+<div><h2>Business-first engineering.</h2><p class="intro">Every project starts from the problem the business needs solved. Technology choices follow from that, not the other way round.</p></div>
+<ul class="principles">
+<li><b>Scalable architecture</b><span>Systems designed to grow without a rewrite.</span></li>
+<li><b>User-centred design</b><span>Interfaces shaped around how people actually work.</span></li>
+<li><b>Transparent communication</b><span>Clear scope, progress and decisions throughout.</span></li>
+<li><b>Reliable practices and long-term support</b><span>Tested releases, and care after launch.</span></li>
+</ul></div></section>
+
+<section id="services"><div class="wrap">
+<h2>What we build</h2><p class="intro">Eight services, one engineering approach.</p>
+<div class="svc">
+<article><h3>Custom Software Development</h3><p>Software built around your own workflows rather than adapted from a generic tool.</p><p class="out">Outcome: tools that fit how you operate.</p><a href="#contact">Learn more</a></article>
+<article><h3>Web Application Development</h3><p>Fast, secure applications that run in the browser on any device.</p><p class="out">Outcome: customers and teams served from one platform.</p><a href="#contact">Learn more</a></article>
+<article><h3>Mobile Application Development</h3><p>Apps for phones and tablets, from first release to updates.</p><p class="out">Outcome: your service in people's hands.</p><a href="#contact">Learn more</a></article>
+<article><h3>AI Integration &amp; Automation</h3><p>Automating repetitive work and adding AI where it measurably helps.</p><p class="out">Outcome: less manual effort, fewer errors.</p><a href="#contact">Learn more</a></article>
+<article><h3>SaaS Product Development</h3><p>From idea to a multi-user product with accounts, billing and admin.</p><p class="out">Outcome: a product ready to take to market.</p><a href="#contact">Learn more</a></article>
+<article><h3>API Development &amp; Integration</h3><p>Connecting your systems and third-party services reliably.</p><p class="out">Outcome: data that flows without re-entry.</p><a href="#contact">Learn more</a></article>
+<article><h3>UI/UX Design &amp; Engineering</h3><p>Research, design and front-end build handled together.</p><p class="out">Outcome: interfaces people understand quickly.</p><a href="#contact">Learn more</a></article>
+<article><h3>Business Process Digitization</h3><p>Moving paper and spreadsheet processes into managed systems.</p><p class="out">Outcome: one trusted source of records.</p><a href="#contact">Learn more</a></article>
+</div></div></section>
+
+<section id="solutions"><div class="wrap split">
+<div><h2>Areas we can build for</h2><p class="intro">These are sectors where we can design and build software. They are not claims of past sector experience.</p></div>
+<ul class="principles">
+<li><b>Healthcare and Education</b><span>Scheduling, records, learning platforms.</span></li>
+<li><b>Retail and E-commerce</b><span>Storefronts, inventory, order workflows.</span></li>
+<li><b>Real Estate and Hospitality</b><span>Listings, bookings, guest and property management.</span></li>
+<li><b>Logistics</b><span>Tracking, dispatch and reporting tools.</span></li>
+<li><b>Small businesses and Startups</b><span>First products, internal tools, MVPs.</span></li>
+</ul></div></section>
+
+<section id="work"><div class="wrap">
+<h2>Featured work</h2><p class="intro">These are demonstration projects, not client engagements. Verified projects will be added with full case studies.</p>
+<div class="work">
+<article><span class="mono">Demonstration project</span><h3>UrbanSaathi</h3><p>Smart city resource management.</p></article>
+<article><span class="mono">Demonstration project</span><h3>PulseWatch</h3><p>Monitoring and notification platform.</p></article>
+<article><span class="mono">Demonstration project</span><h3>SkillBridge</h3><p>AI-powered career platform.</p></article>
+</div></div></section>
+
+<section class="light" id="process"><div class="wrap">
+<h2>How we work</h2><p class="intro">A six-stage process from first conversation to ongoing improvement.</p>
+<ol class="steps">
+<li><b>Discover</b><span>Understand the business problem.</span></li>
+<li><b>Define</b><span>Establish requirements and architecture.</span></li>
+<li><b>Design</b><span>Create intuitive user experiences.</span></li>
+<li><b>Develop</b><span>Engineer reliable software.</span></li>
+<li><b>Deliver</b><span>Test, deploy and launch.</span></li>
+<li><b>Evolve</b><span>Maintain, improve and scale.</span></li>
+</ol></div></section>
+
+<section id="about"><div class="wrap split">
+<div><h2>Technology is not just about writing code. It's about seeing possibilities differently.</h2></div>
+<div><p>PARALLAX is a software engineering company that treats each problem from more than one angle before building. The aim is software that is elegant, scalable and practical.</p><p>Founder introduction and company story will be added here once confirmed.</p></div></div></section>
+
+<section id="contact"><div class="wrap">
+<h2>Have a challenge worth solving?</h2><p class="intro">Let's explore how the right technology can move your business forward.</p>
+<form id="f" novalidate>
+<div class="row"><label>Full name<input name="name" required autocomplete="name"><span class="err"></span></label>
+<label>Business email<input name="email" type="email" required autocomplete="email"><span class="err"></span></label></div>
+<div class="row"><label>Company name<input name="company" autocomplete="organization"></label>
+<label>Project type<select name="type" required><option value="">Select</option><option>Custom software</option><option>Web application</option><option>Mobile application</option><option>AI and automation</option><option>SaaS product</option><option>Other</option></select><span class="err"></span></label></div>
+<div class="row"><label>Estimated budget<select name="budget"><option value="">Prefer not to say</option><option>Under 1 lakh INR</option><option>1 to 5 lakh INR</option><option>5 to 20 lakh INR</option><option>Above 20 lakh INR</option></select></label>
+<label>Project timeline<select name="timeline"><option value="">Not sure yet</option><option>Under 1 month</option><option>1 to 3 months</option><option>3 to 6 months</option><option>6 months or more</option></select></label></div>
+<label>Project description<textarea name="msg" required></textarea><span class="err"></span></label>
+<label class="check"><input type="checkbox" name="consent" required><span>I agree to PARALLAX using these details to reply to my enquiry.</span></label><span class="err" id="ce"></span>
+<div id="turnstile"></div>
+<div><button class="btn" type="submit" id="go">Start a Conversation</button></div>
+<div id="status" role="status" aria-live="polite"></div>
+</form></div></section>
+</main>
+
+<footer><div class="wrap fgrid">
+<div><a class="logo" href="#top">PARALLAX</a><p>Software engineering and digital solutions. Engineering a different perspective.</p></div>
+<nav aria-label="Footer"><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#top">Privacy Policy</a><a href="#top">Terms and Conditions</a></nav>
+<div>&copy; 2026 PARALLAX. All rights reserved.</div>
+</div></footer>
+
+<script>
+// Set your enquiry endpoint (a Worker or BaaS function that validates and stores submissions).
+// Leave empty until it exists: the form will then say so instead of faking success.
+var ENDPOINT = "";
+var btn=document.querySelector(".menu"),links=document.getElementById("links");
+btn.addEventListener("click",function(){var o=links.classList.toggle("open");btn.setAttribute("aria-expanded",o)});
+links.addEventListener("click",function(e){if(e.target.tagName==="A")links.classList.remove("open")});
+var scene=document.getElementById("scene"),layers=scene.querySelectorAll(".l");
+if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
+document.addEventListener("pointermove",function(e){
+var x=(e.clientX/innerWidth-.5),y=(e.clientY/innerHeight-.5);
+layers.forEach(function(l){var d=+l.dataset.d;l.style.transform="translate("+(x*d)+"px,"+(y*d)+"px)"})})}
+var f=document.getElementById("f"),st=document.getElementById("status"),go=document.getElementById("go");
+function say(t){st.textContent=t;st.className="show"}
+f.addEventListener("submit",async function(e){
+e.preventDefault();var ok=true;
+f.querySelectorAll("[required]").forEach(function(el){
+var m="";
+if(el.type==="checkbox"){if(!el.checked)m="Please agree before sending.";document.getElementById("ce").textContent=m}
+else{if(!el.value.trim())m="This field is required.";else if(el.type==="email"&&!/^\S+@\S+\.\S+$/.test(el.value))m="Enter a valid email address.";
+var s=el.parentNode.querySelector(".err");if(s)s.textContent=m}
+if(m)ok=false});
+if(!ok){say("Fix the highlighted fields and send again.");return}
+if(!ENDPOINT){say("This form is not connected to a backend yet, so nothing was sent. Configure ENDPOINT to enable enquiries.");return}
+go.disabled=true;go.textContent="Sending";
+try{var r=await fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+if(!r.ok)throw new Error(r.status);say("Enquiry sent. We will reply to the email you provided.");f.reset()}
+catch(x){say("Sending failed. Check your connection and try again.")}
+go.disabled=false;go.textContent="Start a Conversation"});
+</script>
+</body>
+</html>
