@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { LockKeyhole, ArrowRight } from "lucide-react";
 import { LiquidLoader } from "@/components/admin/liquid-loader";
@@ -16,5 +17,5 @@ export function AdminLogin() {
       window.location.assign("/admin");
     } catch (e) { setError(e instanceof Error ? e.message : "Unable to sign in."); setBusy(false); }
   }
-  return <main className="admin-login-shell"><div className="admin-login-card"><a href="/" className="admin-brand">PARALLAX<span>.</span></a><div className="admin-login-icon"><LockKeyhole size={22}/></div><p className="admin-kicker">PRIVATE WORKSPACE</p><h1>Welcome <em>back.</em></h1><p className="admin-muted">Sign in to manage your agency enquiries.</p><form onSubmit={submit} className="admin-form"><label>Email address<input type="email" autoComplete="username" required value={email} onChange={e=>setEmail(e.target.value)} placeholder="you@company.com"/></label><label>Password<input type="password" autoComplete="current-password" required value={password} onChange={e=>setPassword(e.target.value)} placeholder="Enter your password"/></label>{error && <p className="admin-error" role="alert">{error}</p>}<button className="admin-primary" disabled={busy}>{busy ? <><LiquidLoader size="sm" label="Signing in" /> Signing in…</> : <>Sign in <ArrowRight size={17}/></>}</button></form><p className="admin-login-foot">Protected administrator access · PARALLAX</p></div></main>;
+  return <main className="admin-login-shell"><div className="admin-login-card"><Link href="/" className="admin-brand">PARALLAX<span>.</span></Link><div className="admin-login-icon"><LockKeyhole size={22}/></div><p className="admin-kicker">PRIVATE WORKSPACE</p><h1>Welcome <em>back.</em></h1><p className="admin-muted">Sign in to manage your agency enquiries.</p><form onSubmit={submit} className="admin-form"><label>Email address<input type="email" autoComplete="username" required value={email} onChange={e=>setEmail(e.target.value)} placeholder="you@company.com"/></label><label>Password<input type="password" autoComplete="current-password" required value={password} onChange={e=>setPassword(e.target.value)} placeholder="Enter your password"/></label>{error && <p className="admin-error" role="alert">{error}</p>}<button className="admin-primary" disabled={busy}>{busy ? <><LiquidLoader size="sm" label="Signing in" /> Signing in…</> : <>Sign in <ArrowRight size={17}/></>}</button></form><p className="admin-login-foot">Protected administrator access · PARALLAX</p></div></main>;
 }

@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useState } from "react";
 import { LogOut, ShieldCheck, UserRound, ArrowLeft, ArrowRightFromLine } from "lucide-react";
 
@@ -23,10 +23,10 @@ export function AdminSettings({ email }: { email: string }) {
   return (
     <main className="admin-shell">
       <aside className="admin-sidebar">
-        <a href="/" className="admin-brand">PARALLAX<span>.</span></a>
+        <Link href="/" className="admin-brand">PARALLAX<span>.</span></Link>
         <p className="admin-side-label">WORKSPACE</p>
-        <a className="admin-side-link" href="/admin"><span>◫</span> Enquiries</a>
-        <a className="admin-side-link active" href="/admin/settings"><span>⚙</span> Settings</a>
+        <Link className="admin-side-link" href="/admin"><span>◫</span> Enquiries</Link>
+        <Link className="admin-side-link active" href="/admin/settings"><span>⚙</span> Settings</Link >
         <div className="admin-sidebar-bottom">
           <div className="admin-secure"><ShieldCheck size={17}/><span>Private admin area<br/><small>Secure session active</small></span></div>
           <div className="admin-profile">
